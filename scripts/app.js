@@ -35,6 +35,15 @@ function game() {
     displayScore();
   }
 
+  displayWinner(computerScore, playerScore);
+}
+
+function displayScore() {
+  console.log(`Player score: ${playerScore}`);
+  console.log(`Computer score: ${computerScore}`);
+}
+
+function displayWinner(computerScore, playerScore) {
   if (computerScore === playerScore) {
     console.log("It's a tie!");
   } else if (computerScore > playerScore) {
@@ -42,11 +51,6 @@ function game() {
   } else {
     console.log(`You won! You took the victory ${playerScore} times out of 5`);
   }
-}
-
-function displayScore() {
-  console.log(`Player score: ${playerScore}`);
-  console.log(`Computer score: ${computerScore}`);
 }
 
 game();

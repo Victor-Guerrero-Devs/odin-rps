@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
 *,
 *::after,
 *::before {
@@ -8,4 +10,90 @@
 
 html {
   font-size: 62.5%;
+}
+
+body {
+  font-family: "VT323", monospace;
+  color: rgb(231, 231, 223);
+  background-color: rgb(32, 30, 27);
+}
+
+h1 {
+  font-size: 4.4rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+}
+
+p {
+  margin-top: 1rem;
+  font-size: 1.6rem;
+  color: rgb(248, 248, 108);
+}
+
+#player-score,
+#computer-score {
+  color: rgb(231, 114, 114);
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.game__card {
+  padding: 2rem;
+  width: 20rem;
+}
+
+.game__img {
+  width: 100%;
+}
+
+.game__title {
+  font-size: 1.6rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  gap: 4rem;
+}
+
+button {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  padding: 0.3rem 1.2rem;
+  cursor: pointer;
+  background-color: #fff;
+  border: none;
+}
+
+button:hover {
+  background-color: black;
+  color: #fff;
+}
+
+@media screen and (min-width: 45.375rem) {
+  html {
+    font-size: 72.5%;
+  }
+  .game {
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+  }
 }

@@ -2,13 +2,11 @@ const playerScoreEle = document.querySelector("#player-score");
 const computerScoreEle = document.querySelector("#computer-score");
 const computerImgEle = document.querySelector("#computer-image");
 const playerImgEle = document.querySelector("#player-image");
-const rockBtn = document.querySelector("#rock-btn");
-const paperBtn = document.querySelector("#paper-btn");
-const scissorsBtn = document.querySelector("#scissors-btn");
+const btnContainerEle = document.querySelector(".btn-container");
 const gameMessageEle = document.querySelector("#game-message");
 
 const backDropEle = document.querySelector("#backdrop");
-const modalEle = document.querySelector("#config-overlay");
+const modalEle = document.querySelector("#modal");
 const modalTextEle = document.querySelector("#modal-text");
 const modalBtn = document.querySelector("#modal-btn");
 
@@ -27,12 +25,19 @@ function toggleGameOverScreen() {
 
 function gameOver() {
   toggleGameOverScreen();
-  modalTextEle.textContent =
+  const gameOverMessage =
     playerScore === 5 ? "Congratulations, you won!" : "Oh no! You lost!";
+  modalTextEle.textContent = gameOverMessage;
 }
 
 function restartGame() {
   window.location.reload();
+}
+
+function btnHandler(e) {
+  const playerChoice = e.target.dataset.btnChoice;
+
+  runGame(playerChoice);
 }
 
 function playRound(computerSelection, playerSelection) {
@@ -72,16 +77,5 @@ function runGame(playerChoice) {
   updateScore();
 }
 
-rockBtn.addEventListener("click", () => {
-  runGame("rock");
-});
-
-paperBtn.addEventListener("click", () => {
-  runGame("paper");
-});
-
-scissorsBtn.addEventListener("click", () => {
-  runGame("scissors");
-});
-
+btnContainerEle.addEventListener("click", btnHandler);
 modalBtn.addEventListener("click", restartGame);

@@ -152,10 +152,10 @@ button:hover {
   }
 }
 
-#config-overlay {
+.modal {
   text-align: center;
 }
 
-#config-overlay h2 {
+.modal h2 {
   margin: 0.5rem 0;
 }

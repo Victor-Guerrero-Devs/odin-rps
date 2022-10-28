@@ -7,6 +7,11 @@ const paperBtn = document.querySelector("#paper-btn");
 const scissorsBtn = document.querySelector("#scissors-btn");
 const gameMessageEle = document.querySelector("#game-message");
 
+const backDropEle = document.querySelector("#backdrop");
+const modalEle = document.querySelector("#config-overlay");
+const modalTextEle = document.querySelector("#modal-text");
+const modalBtn = document.querySelector("#modal-btn");
+
 let computerScore = 0;
 let playerScore = 0;
 
@@ -15,10 +20,18 @@ function getComputerChoice() {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
+function toggleGameOverScreen() {
+  backDropEle.style.display = "block";
+  modalEle.style.display = "block";
+}
+
 function gameOver() {
-  let message =
+  toggleGameOverScreen();
+  modalTextEle.textContent =
     playerScore === 5 ? "Congratulations, you won!" : "Oh no! You lost!";
-  alert(message);
+}
+
+function restartGame() {
   window.location.reload();
 }
 
@@ -70,3 +83,5 @@ paperBtn.addEventListener("click", () => {
 scissorsBtn.addEventListener("click", () => {
   runGame("scissors");
 });
+
+modalBtn.addEventListener("click", restartGame);

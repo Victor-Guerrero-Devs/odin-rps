@@ -97,3 +97,65 @@ button:hover {
     gap: 3rem;
   }
 }
+
+/* MODAL + BACKDROP */
+
+.modal {
+  /* fixed so that the overlay can't be moved and stays in the middle */
+  position: fixed;
+  top: 20%;
+  left: 5%;
+  width: 90%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  /* by default, keep it hidden until we make it appear via JS */
+  display: none;
+}
+
+.modal__title {
+  color: rgb(36, 34, 34);
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 3.6rem;
+}
+
+.modal__text {
+  color: rgb(14, 14, 114);
+  margin-bottom: 1.5rem;
+}
+
+#modal-btn {
+  background-color: black;
+  color: #fff;
+}
+
+/* this will be the opaque background behind the modal when it pops up */
+#backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+@media (min-width: 48rem) {
+  .modal {
+    /* half the width of the viewport minus 20rem 
+    using calc lets it be responsive */
+    left: calc(50% - 20rem);
+    width: 40rem;
+  }
+}
+
+#config-overlay {
+  text-align: center;
+}
+
+#config-overlay h2 {
+  margin: 0.5rem 0;
+}

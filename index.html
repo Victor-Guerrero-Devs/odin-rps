@@ -10,6 +10,14 @@
     <script src="scripts/app.js" defer></script>
   </head>
   <body>
+    <div id="backdrop"></div>
+    <aside class="modal" id="config-overlay">
+      <header>
+        <h2 class="modal__title">Game Over</h2>
+      </header>
+      <p class="modal__text" id="modal-text"></p>
+      <button id="modal-btn">Play Again</button>
+    </aside>
     <h1>Rock, Paper, Scissors</h1>
     <h2>Player Score: <span id="player-score">0</span></h2>
     <h2>Computer Score: <span id="computer-score">0</span></h2>
@@ -21,11 +29,11 @@
           src="images/paper.svg"
           alt=""
         />
-        <h3 class="game__title">Computer Choice</h3>
+        <h3 class="game__title">Computer</h3>
       </div>
       <div class="game__card">
         <img class="game__img" id="player-image" src="images/rock.svg" alt="" />
-        <h3 class="game__title">Player Choice</h3>
+        <h3 class="game__title">Player</h3>
       </div>
     </main>
     <div class="btn-container">

@@ -30,7 +30,7 @@ function gameOver() {
   modalTextEle.textContent = gameOverMessage;
 }
 
-function restartGame() {
+function restartGameHandler() {
   window.location.reload();
 }
 
@@ -78,4 +78,4 @@ function runGame(playerChoice) {
 }
 
 btnContainerEle.addEventListener("click", btnHandler);
-modalBtn.addEventListener("click", restartGame);
+modalBtn.addEventListener("click", restartGameHandler);
